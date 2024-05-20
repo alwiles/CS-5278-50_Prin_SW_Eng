@@ -1,0 +1,4 @@
+﻿  GeoHash.cpp
+C:\Users\wilesamy\source\repos\GeoHash\GeoHash\GeoHash.cpp(90,25): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\wilesamy\source\repos\GeoHash\GeoHash\GeoHash.cpp(93,32): warning C4267: 'initializing': conversion from 'size_t' to 'short', possible loss of data
+  GeoHash.vcxproj -> C:\Users\wilesamy\source\repos\GeoHash\x64\Debug\GeoHash.exe
