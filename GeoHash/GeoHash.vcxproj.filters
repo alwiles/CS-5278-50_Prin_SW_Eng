@@ -18,9 +18,24 @@
     <ClCompile Include="GeoHash.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GeoDBFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeoDB.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeoHash.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeoDBInterface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeoDBFactory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeoDB.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

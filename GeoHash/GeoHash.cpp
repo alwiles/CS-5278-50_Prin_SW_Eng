@@ -72,6 +72,7 @@ int GeoHash::To32BitInt(short* bitArray, size_t sz)
 {
 	//take array of bits and return the corresponding 
 	//32 bit integer, little endian
+	uint32_t result = 0;
 
 	if (bitArray == NULL)
 	{
@@ -90,25 +91,20 @@ int GeoHash::To32BitInt(short* bitArray, size_t sz)
 		positionArray[i] = pow(2, i);
 	}
 
-	short positionCounter = sz - 1;
-	short* marker = bitArray + positionCounter;
-	int value = 0;
+	short* marker = bitArray;
+	
 	for (size_t n = 0; n < sz; n++)
 	{
 		short markerValue = *marker;
 		if (markerValue)
 		{
-			value += positionArray[n];
+			result |= positionArray[n];
 		}
-		if (positionCounter == 0)
-		{
-			break;
-		}
-		positionCounter--;
-		marker = bitArray + positionCounter;
+		
+		marker++;
 	}
 
-	return value;
+	return (int)result;
 }
 
 bool GeoHash::ToHashString(short* bitArray, size_t sz, char* resultString)
@@ -346,11 +342,12 @@ int GeoHash::GetGeohashInteger(double targetValue1, double targetValue2, int bit
 		return 0;
 	}
 
-	bitArray2D = (short*)malloc(sizeof(short) * bitsOfPrecision);
+	bitArray2D = (short*)malloc(sizeof(short) * bitsOfPrecision); //aw test was bitsOfPrecision
 	if (bitArray2D == NULL)
 	{
 		return 0; //no memory
 	}
+	memset(bitArray2D, 0, sizeof(short) * bitsOfPrecision);
 	isSuccess = Geohash2D(targetValue1, LATITUDE_RANGE, targetValue2, LONGITUDE_RANGE, bitsOfPrecision, bitArray2D);
 	if (!isSuccess)
 	{

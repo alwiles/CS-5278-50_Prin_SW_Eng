@@ -97,8 +97,8 @@ namespace GeoHashTests
 			GeoHash MyGeoHash = GeoHash();
 
 			Assert::AreEqual(0, MyGeoHash.GetGeohashInteger(MyGeoHash.LATITUDE_RANGE[0], MyGeoHash.LONGITUDE_RANGE[0], 10));
-			Assert::AreEqual(341, MyGeoHash.GetGeohashInteger(MyGeoHash.LATITUDE_RANGE[0], MyGeoHash.LONGITUDE_RANGE[1], 10));
-			Assert::AreEqual(10943, MyGeoHash.GetGeohashInteger(MyGeoHash.LATITUDE_RANGE[1], -158.5, 14));
+			Assert::AreEqual(682, MyGeoHash.GetGeohashInteger(MyGeoHash.LATITUDE_RANGE[0], MyGeoHash.LONGITUDE_RANGE[1], 10));
+			Assert::AreEqual(16213, MyGeoHash.GetGeohashInteger(MyGeoHash.LATITUDE_RANGE[1], -158.5, 14));
 		}
 	};
 }
