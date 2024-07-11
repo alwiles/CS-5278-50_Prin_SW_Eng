@@ -1,8 +1,8 @@
 output: GeoDB.o
-	gcc GeoDB.o -o output
+	g++ GeoDB.o -o output
 
-GeoDB.o: GeoDB.cpp GeoDB.h
-	gcc -c GeoDB.cpp
+GeoDB.o: GeoHash/GeoDB.cpp GeoHash/GeoDB.h
+	g++ -c GeoDB.cpp
 
 clean:
 	rem *.o output
