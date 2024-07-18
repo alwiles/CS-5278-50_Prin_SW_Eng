@@ -1,8 +1,11 @@
+
+
 // GeoHash.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
 #include <iostream>
 #include <cmath>
+#include <cstring>
 #include "GeoHash.h"
 
 #define SIZE_OF_INT 32
@@ -72,7 +75,7 @@ int GeoHash::To32BitInt(short* bitArray, size_t sz)
 {
 	//take array of bits and return the corresponding 
 	//32 bit integer, little endian
-	uint32_t result = 0;
+	unsigned int result = 0;
 
 	if (bitArray == NULL)
 	{
@@ -347,7 +350,8 @@ int GeoHash::GetGeohashInteger(double targetValue1, double targetValue2, int bit
 	{
 		return 0; //no memory
 	}
-	memset(bitArray2D, 0, sizeof(short) * bitsOfPrecision);
+	
+	memset((void*)bitArray2D, 0, sizeof(short) * bitsOfPrecision);
 	isSuccess = Geohash2D(targetValue1, LATITUDE_RANGE, targetValue2, LONGITUDE_RANGE, bitsOfPrecision, bitArray2D);
 	if (!isSuccess)
 	{
