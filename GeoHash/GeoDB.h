@@ -1,5 +1,6 @@
 #pragma once
 #include <vector> 
+#include <stddef.h>
 #include "GeoDBInterface.h"
 #include "GeoHash.h"
 #include "GeoHashDefs.h"
