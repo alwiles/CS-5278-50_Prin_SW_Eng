@@ -1,8 +1,3 @@
-output: GeoDB.o
-	g++ GeoDB.o -o output
+GeoHash: GeoHash/GeoHash.cpp GeoHash/GeoDB.cpp GeoHash/GeoDBFactory.cpp
+	gcc -o GeoHash GeoHash/GeoHash.cpp GeoHash/GeoDB.cpp GeoHash/GeoDBFactory.cpp -I.
 
-GeoDB.o: GeoHash/GeoHash.cpp GeoHash/GeoHash.h GeoHash/GeoDB.cpp GeoHash/GeoDB.h
-	g++ -c GeoHash/GeoHash.cpp GeoHash/GeoDB.cpp GeoHash/GeoDBFactory.cpp
-
-clean:
-	rem *.o output
