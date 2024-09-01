@@ -12,14 +12,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Clone GTest
-      run:  git clone https://github.com/google/googletest.git -b release-1.10.0
-    - name: Install gtest manually
-      working-directory: ./googletest
-      run:  sudo apt install python3-pip &&
-            cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_FLAGS="-Wno-error" . &&
-            make &&
-            sudo make install
+    - uses: LazyPanda07/get-gtest@v1.1
+      with:
+        install-path: new-path/make-install
+
+    - name: Print result
+      run: ls new-path/make-install
     - uses: actions/checkout@v4
     - name: configure
       run: ./configure
