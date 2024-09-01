@@ -14,8 +14,6 @@ jobs:
     steps:
     - name: Clone GTest
       run:  git clone https://github.com/google/googletest.git -b release-1.10.0
-    - name: configure1
-      run: ./configure
     - name: Install gtest manually
       working-directory: ./googletest
       run:  sudo apt install python3-pip &&
